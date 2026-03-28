@@ -11,6 +11,8 @@ body {
 
 .wrapper {
 	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0px 20px;
 }
 
 .container {
@@ -41,7 +43,7 @@ header a {
 nav {
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 }
 
@@ -59,4 +61,17 @@ ul li {
 
 ul li :hover {
 	color: #007bff;
+}
+
+@media (max-width: 768px) {
+	header {
+		flex-direction: column;
+		row-gap: 15px;
+	}
+	nav {
+		flex-direction: column;
+	}
+	ul li {
+		padding: 10px 20px;
+	}
 }
