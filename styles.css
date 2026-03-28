@@ -102,6 +102,18 @@ section.wrapper {
 }
 
 /*
+*FOOTER
+*/
+footer {
+	width: 100%;
+	padding: 20px 0;
+	background-color: #eeecec;
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+}
+
+/*
 INDEX
 */
 
