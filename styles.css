@@ -32,6 +32,12 @@ body {
 	gap: 20px;
 }
 
+@media (max-width: 768px) {
+	.cards {
+		flex-direction: column;
+	}
+}
+
 /*
 *HEADER
 */
@@ -62,7 +68,6 @@ ul li {
 	font-size: 18px;
 	font-weight: 500;
 	color: #333;
-	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 	text-decoration: none;
 	font-size: 16px;
@@ -137,3 +142,43 @@ INDEX
 .link-cards a:hover h2 {
 	color: #007bff;
 }
+
+/*
+* PEOPLE (STARWAR CHARACTER PROFILE)
+*/
+
+#characterListDiv {
+	justify-content: center;
+}
+
+.character-cards {
+	width: 45%;
+	min-height: 150px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	display: flex;
+	padding: 20px 10px;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.character-cards ul {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.character-cards ul li {
+	padding: 0px;
+}
+
+
+/*
+*Extra Mobile Styles
+*/
+
+@media (max-width: 768px) {
+	.link-cards, .character-cards {
+		width: 100%;
+	}
