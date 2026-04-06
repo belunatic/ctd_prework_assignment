@@ -1,12 +1,25 @@
-let character = [];
+let characters = [];
+let filmsData = [];
 
 //fetch the star wars character
-const fetchStarWarCharacter = async () => {
+const fetchStarWarCharacters = async () => {
 	try {
 		const res = await fetch("https://www.swapi.tech/api/people");
 		const data = await res.json();
 		console.log(data.results);
-		character = [...data.results];
+		characters = [...data.results];
+	} catch (error) {
+		console.log("something went wrong", error.message);
+	}
+};
+
+//fetch films
+const fetchStarWarsFilms = async () => {
+	try {
+		const res = await fetch(`https://www.swapi.tech/api/films`);
+		const data = await res.json();
+		console.log(data.result);
+		filmsData = [...data.result];
 	} catch (error) {
 		console.log("something went wrong", error.message);
 	}
@@ -25,11 +38,14 @@ const fetchStartWarCharacterProfile = async (id) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
 	//fetch characters
-	await fetchStarWarCharacter();
+	await fetchStarWarCharacters();
+	//fetch the films
+	await fetchStarWarsFilms();
+
 	//grab the div container
 	const sectionCard = document.getElementById("characterListDiv");
 
-	character.forEach(async (char) => {
+	characters.forEach(async (char) => {
 		//create a div and add a class to it
 		const characterCards = document.createElement("div");
 		characterCards.classList.add("character-cards");
@@ -38,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		const characterName = document.createElement("h2");
 		characterName.textContent = char.name;
 
-		//get character profile info
+		//fetch character profile info
 		const characterProfile = await fetchStartWarCharacterProfile(char.uid);
 		//UL
 		//character profile ul
@@ -54,16 +70,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 		characterProfileUl.appendChild(characterGender);
 		//character films
 		const characterFilms = document.createElement("li");
-		const filmsList = characterProfile.films.join(", ");
-		characterFilms.textContent = `Films: ${filmsList}`;
+		const filmsList = [];
+		characterProfile.films.forEach(async (filmURL) => {
+			const filmInfo = filmsData.find(
+				(film) => film.properties.url === filmURL,
+			);
+			filmsList.push(filmInfo.properties.title);
+		});
+		characterFilms.textContent = `Films: ${filmsList.join(",")}`;
 		characterProfileUl.appendChild(characterFilms);
-		//character learn more url
-		const characterLearnMore = document.createElement("li");
-		characterLearnMore.innerHTML = `<a href="${characterProfile.url}" target="_blank">Learn More</a>`;
-		characterProfileUl.appendChild(characterLearnMore);
+
 		//APPEND TO UL
 		//append the ul to the character card
 		characterCards.appendChild(characterProfileUl);
+
+		//hide the loading text
+		const loadingText = document.getElementById("loading");
+		loadingText.style.display = "none";
 
 		//APPEND TO DIV
 		characterCards.appendChild(characterName);
