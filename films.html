@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles.css" />
+		<script src="./js/films.js" defer></script>
 		<title>Films</title>
 	</head>
 	<body>
@@ -24,21 +25,8 @@
 		<main>
 			<section class="wrapper">
                 <div class="container">
-                    <div class="cards">
-                        <div class="link-cards">
-                            <a href="#">
-                                <div>
-                                    <h2>People</h2>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="link-cards">
-                            <a href="#">
-                                <div>
-                                    <h2>People</h2>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="cards" id="filmsListDiv">
+						<p id="loading">Loading films...</p>
                     </div>
                 </div>
 			</section>
