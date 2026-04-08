@@ -62,6 +62,12 @@ nav {
 	align-items: center;
 }
 
+nav .active {
+	border-bottom: 1px solid #333;
+	border-width: 2px;
+	padding: 1px 4px;
+}
+
 ul li {
 	display: inline-block;
 	padding: 0px 20px;
@@ -75,6 +81,7 @@ ul li {
 
 ul li :hover {
 	color: #007bff;
+	border-color: #007bff;
 }
 
 @media (max-width: 768px) {
@@ -122,13 +129,30 @@ INDEX
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	padding: 10px;
-	background-color: chocolate;
+	background: #833ab4;
+	background: linear-gradient(
+		90deg,
+		rgba(131, 58, 180, 1) 0%,
+		rgba(54, 44, 44, 1) 50%,
+		rgba(38, 25, 4, 1) 100%
+	);
+}
+
+.link-cards:last-child {
+	background: #b4773a;
+	background: linear-gradient(
+		90deg,
+		rgba(180, 119, 58, 1) 0%,
+		rgba(44, 54, 46, 1) 50%,
+		rgba(28, 19, 8, 1) 100%
+	);
 }
 
 .link-cards a {
 	width: 100%;
 	height: 100%;
 	text-decoration: none;
+	color: #fff;
 }
 
 .link-cards a div {
@@ -140,7 +164,7 @@ INDEX
 }
 
 .link-cards a:hover h2 {
-	color: #007bff;
+	color: #d9e252;
 }
 
 /*
@@ -196,5 +220,13 @@ INDEX
 	.link-cards,
 	.character-cards {
 		width: 100%;
+	}
+
+	body {
+		height: auto;
+	}
+
+	main {
+		flex: auto;
 	}
 }
