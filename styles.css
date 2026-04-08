@@ -173,12 +173,28 @@ INDEX
 	padding: 0px;
 }
 
+/*
+*FILMS
+*/
+
+.film-cards {
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 10px;
+	row-gap: 10px;
+	margin: 10px 0px;
+}
 
 /*
 *Extra Mobile Styles
 */
 
 @media (max-width: 768px) {
-	.link-cards, .character-cards {
+	.link-cards,
+	.character-cards {
 		width: 100%;
 	}
+}
