@@ -5,8 +5,15 @@ This project is a simple Star Wars data viewer that fetches information from the
 ## How to run it
 
 - Fork or clone the repository
-- Go to the folder and run the the `/index.html` on your browser
+- Open the project folder
+- Run the `index.html` file directly in your browse
 
-## Live link
+## Live Demo
 
 [Star Wars API Code The Dream](https://belunatic.github.io/ctd_prework_assignment/index.html)
+
+## Future Plans
+
+- add a second page to the character list
+- utilize other API end-point like planets and starship
+- Create a React version of this project
