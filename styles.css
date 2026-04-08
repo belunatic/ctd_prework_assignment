@@ -1,7 +1,11 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Miranda+Sans:ital,wght@0,500;1,500&display=swap");
+
 * {
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	font-family: "Miranda Sans", sans-serif;
 }
 
 body {
@@ -48,6 +52,7 @@ header {
 	background-color: #eeecec;
 	display: flex;
 	align-items: center;
+	font-family: "Lato", sans-serif;
 }
 
 header a {
