@@ -129,6 +129,8 @@ INDEX
 */
 
 .link-cards {
+	display: flex;
+	flex-direction: column;
 	width: 45%;
 	min-height: 150px;
 	border-radius: 10px;
@@ -158,6 +160,7 @@ INDEX
 	height: 100%;
 	text-decoration: none;
 	color: #fff;
+	flex: 1;
 }
 
 .link-cards a div {
@@ -225,13 +228,5 @@ INDEX
 	.link-cards,
 	.character-cards {
 		width: 100%;
-	}
-
-	body {
-		height: auto;
-	}
-
-	main {
-		flex: auto;
 	}
 }
